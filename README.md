@@ -78,8 +78,8 @@
    ```
 
 2. 修改提交信息
-   编辑 .github/workflows/deploy.yml, 将 `GIT_USER_NAME` 和 `GIT_USER_EMAIL` 按自己的信息替换即可
-   ![image](https://github.com/tangchenyang/picx-images-hosting/raw/master/image.8dx3b1h6m4.webp)  
+   进入 `blog` 目录下，编辑 .github/workflows/deploy.ml, 将 `GIT_HTTPS_URL`，`GIT_USER_NAME` 和 `GIT_USER_EMAIL` 按自己的信息替换即可，如：  
+   ![image](https://github.com/tangchenyang/picx-images-hosting/raw/master/image.8z6qxdty3c.webp)
 
 3. 关联 blog 仓库, 并推送到远端  
    ```shell
@@ -87,27 +87,27 @@
    rm -rf .git
    echo "我的个人博客" > README.md
    git init
-   git add *
+   git add * && git add .*
    git commit -m "first commit"
    git branch -M master
    git remote add origin git@github.com:tangchenyang/blog.git
    git push -u origin master
    ```
    
-4. 检查博客文章仓库 `blob` 的GHA (GitHub Action)
-   代码推送到远端 `blog` 仓库后，由于包含了 workflow, 因此 GHA 将自动触发 CI/CD Pipeline; 
+4. 检查博客文章仓库 `blob` 的GHA (GitHub Action)  
+   代码推送到远端 `blog` 仓库后，由于包含了 workflow, 因此 GHA 将自动触发 CI/CD Pipeline;   
    `blog/blogs` 目录下的所有markdown 文件将自动转换为静态网页代码，并自动提交到你的个人博客网站仓库 `<your username>.github.io`  
    ![image](https://github.com/tangchenyang/picx-images-hosting/raw/master/image.7w71mhaaey.webp)
 
-5. 检查个人博客网站仓库 `<your username>.github.io` 的 GHA
-   由 `blog` GHA 自动提交的静态网页代码将自动触发 `<your username>.github.io` 的GHA，自动将静态网页部署到你的个人博客网站上。  
-   ![image](https://github.com/tangchenyang/picx-images-hosting/raw/master/image.5tr8yffzsz.webp)
+5. 检查个人博客网站仓库 `<your username>.github.io` 的 GHA  
+   由 `blog` GHA 自动提交的静态网页代码将自动触发 `<your username>.github.io` 的GHA，自动将静态网页部署到你的个人博客网站上。    
+   ![image](https://github.com/tangchenyang/picx-images-hosting/raw/master/image.5tr8yffzsz.webp)  
    
 
-# 访问个人博客网站
-`<your username>.github.io` 的 GHA 执行完成后，在浏览器输入 `<your username>.github.io` 即可看到你的个人博客网站初始内容。  
-如我的个人博客： https://tangchenyang.github.io/ 
-![image](https://github.com/tangchenyang/picx-images-hosting/raw/master/image.map4yq6d.webp)
+# 访问个人博客网站  
+`<your username>.github.io` 的 GHA 执行完成后，在浏览器输入 `<your username>.github.io` 即可看到你的个人博客网站初始内容。   
+如我的个人博客： https://tangchenyang.github.io/   
+![image](https://github.com/tangchenyang/picx-images-hosting/raw/master/image.map4yq6d.webp)  
 
-# 开启评论和网站统计功能
-TODO： 敬请期待
+# 开启评论和网站统计功能  
+TODO： 敬请期待  
