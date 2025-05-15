@@ -8,6 +8,13 @@ if [ -d "${HEXO_HOME}" ]; then
   rm -rf "${HEXO_HOME}"
 fi
 
+# fix sed issue on MacOS
+brew install gnu-sed
+sed() {
+  gsed "$@"
+}
+export -f sed
+
 # hexo setup
 export ENABLE_WEB_STATISTICS="false"
 export ENABLE_COMMENTS="false"

@@ -4,7 +4,7 @@ PROJECT_DIR="$CURRENT_SCRIPT_DIR"/..
 HEXO_HOME="$PROJECT_DIR"/hexo-home
 
 install_hexo() {
-  hexo v || echo "Hexo is not installed. Installing now..." && npm install -g hexo-cli
+  hexo v || (echo "Hexo is not installed. Installing now..." && npm install -g hexo-cli)
   cd "$PROJECT_DIR" && hexo init hexo-home
   cd hexo-home && npm install
 }
